@@ -1,7 +1,7 @@
 export const CONFIG = {
   // Recipient of the experience
   birthdayName: "D",
-  birthdayDate: "29/5/2010",
+  birthdayDate: "29/5",
   missYou: "miss you 🫂",
   // Section 2: Memory Constellation definitions
   // Coordinate values define their relative spacing in 3D space
