@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400;500;600&family=Outfit:wght@200;300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-space-dark text-white font-sans overflow-x-hidden m-0 p-0 selection:bg-space-glow/30 selection:text-white;
+    background-color: #030303;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Hide scrollbar for clean cinematic feel, scrolling is controlled or smooth */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html, body, #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 30px rgba(94, 67, 243, 0.2);
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 15px rgba(0, 225, 255, 0.5), 0 0 30px rgba(0, 225, 255, 0.2);
+  }
+
+  .text-glow-purple {
+    text-shadow: 0 0 15px rgba(94, 67, 243, 0.5), 0 0 30px rgba(94, 67, 243, 0.2);
+  }
+
+  .glass-card {
+    background: rgba(13, 14, 26, 0.4);
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .glass-card-bright {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .cinematic-vignette {
+    background: radial-gradient(circle, rgba(0,0,0,0) 40%, rgba(3,3,3,0.9) 100%);
+    pointer-events: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom fade effects */
+.transition-slow {
+  transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Ink bleed text animation base */
+.ink-text {
+  filter: url('#ink-filter');
+}
+
+/* Soft scanline effect overlays */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg, 
+    rgba(255, 0, 0, 0.06), 
+    rgba(0, 255, 0, 0.02), 
+    rgba(0, 0, 255, 0.06)
+  );
+  background-size: 100% 4px, 6px 100%;
+}
